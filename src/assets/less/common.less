@@ -1,0 +1,51 @@
+.iconfont {
+  font-size: 14px;
+}
+.el-button [class*=el-icon-]+span,
+.el-button [class*=iconfont]+span
+{
+  margin-left: 5px;
+}
+.swal2{
+  &-container{
+    z-index: 19930207 !important;
+  }
+  &-title{
+    display: inline-block !important;
+  }
+}
+
+.vue-slideout{
+  &-header,&-footer{
+    z-index : 28 !important;
+  }
+  &-content{
+    padding : 1rem 0.75rem !important;
+  }
+}
+
+.dialog-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid #e8e8e8;
+  padding: 10px 16px;
+  text-align: right;
+  left: 0;
+  background: #fff;
+  border-radius: 0 0 2px 2px;
+  z-index: 1;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: transparent;
+}
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: hsla(220, 4%, 58%, .3);
+}

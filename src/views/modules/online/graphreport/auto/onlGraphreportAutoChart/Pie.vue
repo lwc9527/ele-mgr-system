@@ -1,0 +1,73 @@
+<template>
+    <div class = "pie">
+        <v-chart :options="options" autoresize></v-chart>
+    </div>
+</template>
+
+<script>
+    import ECharts from 'vue-echarts/components/ECharts'
+    import 'echarts/lib/chart/pie'
+    import 'echarts/lib/component/tooltip';
+    import 'echarts/lib/component/legend'
+
+    export default {
+        name: "Pie",
+        components: {
+            'v-chart': ECharts,
+        },
+        props : {
+            data : {
+                type : Object
+            }
+        },
+        data() {
+            return {
+                options: {},
+            }
+        },
+        watch : {
+            data : {
+                handler(props){
+                    if(props){
+                        this.initChar()
+                    }
+                },
+                immediate : true
+            }
+        },
+        methods: {
+            initChar() {
+                let {data} = this.data
+                this.options = {
+                    ...this.options,
+                    tooltip : {
+                        trigger: 'item',
+                    },
+                    legend: {
+                        bottom : 0,
+                        data: data.map(item=>item.name),
+                    },
+                    series: [
+                        {
+                            type: 'pie',
+                            radius: '55%',
+                            roseType: 'angle',
+                            data
+                        }
+                    ],
+                    color: ['#C335                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        31', '#EFE42A', '#64BD3D', '#EE9201', '#29AAE3', '#B74AE5', '#0AAF9F', '#E89589',
+                        '#16A085', '#4A235A', '#C39BD3 ', '#F9E79F', '#BA4A00', '#ECF0F1', '#616A6B', '#EAF2F8', '#4A235A', '#3498DB']
+                }
+            }
+        }
+    }
+</script>
+
+<style scoped lang = "less">
+    .pie{
+        .echarts {
+            width: 100%;
+            height: 400px;
+        }
+    }
+</style>

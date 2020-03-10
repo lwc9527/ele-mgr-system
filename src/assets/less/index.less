@@ -1,0 +1,39 @@
+@import "./common";
+@import "./tailwind.css";
+html,
+body,
+#app{
+  height: 100%;
+  font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+  font-size: 14px;
+  background: #f0f2f5;
+}
+.el-scrollbar__view {
+  height: 100%;
+}
+.el-loading-mask{
+  background-color: rgba(0, 0, 0, 0.08) !important;
+}
+.el-radio{
+  margin-right: 1rem !important;
+}
+.el-button+.el-dropdown,
+.el-button+.el-badge{
+  margin-left : 10px;
+}
+.elx-table .el-pagination{
+  text-align: right;
+  padding: 0.75rem 0;
+}
+img, svg, video, canvas, audio, iframe, embed, object{
+  display: inline-block;
+}
+
+button:focus{
+  outline: none;
+}
+.menu-lang{
+  .el-menu--popup, .el-menu-item {
+    min-width: inherit !important;
+  }
+}
